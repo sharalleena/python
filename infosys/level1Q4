@@ -1,0 +1,37 @@
+'''blem Statement
+Given a list of numbers, write a python function which returns true if one of the first 4 elements in the list is 9. Otherwise it should return false.
+
+The length of the list can be less than 4 also.
+
+Sample Input                  Expected Output
+
+[1, 2, 9, 3, 4]                         True
+
+[1, 2, 9]                                True
+
+[1, 2,3,4]                              False'''
+
+def find_nine(nums):
+    
+    if len(nums)<5:
+       if 9 in nums:
+           return True
+    else:
+        for i in range(4):
+            x=nums[i]
+            if x==9:
+                return True
+    return False    
+    
+
+nums=[100, 200]
+print(find_nine(nums))
+
+
+''' test cases
+Sl. No.	Type	S/A	Test Target	Input	Expected Output	Actual Output	Result
+1	Structural	N/A	find_nine(nums)	NA	NA	NA	done
+2	Logical	Sample	find_nine	nums-[1, 2, 3, 4, 5]	False	False	done
+3	find_nine	nums-[9, 1, 9, 2]	True	True	done
+4	Actual	find_nine	nums-[1, 10, 20, 9, 100]	N/A	True	done
+5	find_nine	nums-[9, 1]	N/A	True	done
