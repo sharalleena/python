@@ -1,0 +1,34 @@
+'''
+Write a Python function which accepts a string and returns a string made of the first 2 and the last 2 characters of the given string.
+
+If the string length is less than 2, return -1.
+
+Note: If the string length is equal to 2, consider the 2 characters to be the first as well as the last two characters.
+
+Sample Input                               Expected Output
+
+w3resource                                       w3ce
+
+w3                                               w3w3
+
+A                                                 -1
+
+'''
+
+def string_both_ends(input_string):
+    l=len(input_string)
+    if l>=2:
+        x=input_string[:2]+input_string[l-2:l]
+        return x
+    elif l<2 :
+        return -1
+input_string="w3w"
+print(string_both_ends(input_string))
+
+
+'''
+Structural	N/A	string_both_ends(input_string)	NA	NA	NA	done
+2	Logical	Sample	string_both_ends	input_string-se	sese	'sese'	done
+3	Actual	string_both_ends	input_string-resources	N/A	'rees'	done
+
+'''
