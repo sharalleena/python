@@ -1,0 +1,34 @@
+'''Write a python function which accepts a list of numbers and returns true, if 1, 2, 3 appears in sequence in the list.
+
+Otherwise, it should return false.
+
+Sample Input                              Expected Output
+
+[1, 1, 2, 3, 1]                                  True
+
+[1, 1, 2, 4, 3]                                  False'''
+9601150
+
+def list123(nums):
+    
+    for i in range(len(nums)):
+        try:
+            if nums[i]==1 and nums[i+1]==2 and nums[i+2]==3:
+                return True
+        except IndexError:
+            return False
+    return False 
+
+nums=[1,2,3,4,5]
+print(list123(nums))
+ 
+
+
+'''Verification Result
+
+Sl. No.	Type	S/A	Test Target	Input	Expected Output	Actual Output	Result
+1	Structural	N/A	list123(nums)	NA	NA	NA	done
+2	Logical	Sample	list123	nums-[1, 2, 1, 2, 1]	False	False	done
+3	list123	nums-[1, 2, 1, 3, 1, 2, 3, 1]	True	True	done
+4	Actual	list123	nums-[100, 2000, 1, 2, 3, 300]	N/A	True	done
+5	list123	nums-[1, 2, 3]	N/A	True	done'''
