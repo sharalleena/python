@@ -1,0 +1,44 @@
+'''
+
+Write a python function which accepts a list of strings containing details of deposits and withdrawals made in a bank account and returns the net amount in the account.
+
+Suppose the following input is supplied to the function 
+["D:300","D:300","W:200","D:100"] where D means deposit and W means withdrawal,
+then the net amount in the account is 500.
+
+Sample Input                                              Expected Output
+
+["D:300","D:200","W:200","D:100"]                                  400
+
+["D:350","W:100","W:500","D:1000"]                                 750
+'''
+
+
+
+def calculate_net_amount(trans_list):
+    #start writing your code here
+    net_amount=0
+    #str(net_amount)
+    for i in trans_list:
+        if i[0]=="D":
+            x=int(i[2:])
+            net_amount=net_amount+x
+        elif i[0]=="W":
+            x=int(i[2:])
+            net_amount=net_amount-x
+            
+        
+    
+    return net_amount
+
+trans_list=["D:300","D:200","W:200","D:100"]
+print(calculate_net_amount(trans_list))
+
+
+'''
+
+Sl. No.	Type	S/A	Test Target	Input	Expected Output	Actual Output	Result
+1	Structural	N/A	calculate_net_amount(trans_list)	NA	NA	NA	done
+2	Logical	Sample	calculate_net_amount	trans_list-['D:1300', 'D:350', 'W:1200', 'D:100']	550	550	done
+3	Actual	calculate_net_amount	trans_list-['D:3000', 'W:2000', 'W:200', 'D:1000']	N/A	1800	done
+'''
